@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Ensure nginx is latest version
+      become: yes
+      apt: name=nginx state=absent
