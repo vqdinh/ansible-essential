@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Install list of packages
+      become: yes
+      action: apt name={{item}} state=installed
+      with_items:
+        - nginx
+        - htop
+        - python3:x

@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: Remove list of packages
+      become: yes
+      action: apt name={{item}} state=absent
+      with_items:
+        - nginx
+        - htop
+        - python3
